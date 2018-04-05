@@ -120,5 +120,5 @@ const throwDices = () => {
 console.log(throwDices())
 const throwDiceElement = document.getElementById('throwDice')
 throwDiceElement.addEventListener('click', throwDices)
-=======
+
 start()
