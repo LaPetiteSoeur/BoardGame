@@ -55,10 +55,10 @@ console.log(heroes[0].images.lg);
     {position:25, image:``, text:`Tu bois ! 1 shot !`, class:`4`},
     {position:45, image:``, text:`C'est normal si vous comprenez pas !! Gagne 20 points de respect !`, class:`5`},
     {position:58, image:``, text:`l'alcool est dangereux pour la santé ! Buvez avec modération!`, class:`8`},
-    {position:57, image: heroes[346].images.lg, text:``, class:`1`},
+    {position:57, image: heroes[346].images.lg, text:`Tu perds 15 points et tu bois 2 gorgées.`, class:`1`},
     {position:56, image:``, text:`TAIS-TOI ! et retourne à la case départ.`, class:`6`},
     {position:55, image:``, text:`Ton père c'est un marketeux et tu bois 1 shot`, class:`9`},
-    {position:54, image: heroes[370].images.lg, text:``, class:`1`},
+    {position:54, image: heroes[370].images.lg, text:`Tu perds 15 points et tu bois 2 gorgées.`, class:`1`},
     {position:53, image:``, text:`Tu bois ! 1 shot !`, class:`4`},
     {position:37, image:``, text:`Tu bois ! 1 shot !`, class:`4`},
     {position:12, image:``, text:`Mes couilles sur ton nez! Tu bois!`, class:`9`},
@@ -87,9 +87,11 @@ console.log(heroes[0].images.lg);
   // console.log(board)
   
   const creatediv = cell => {
-    return `<div class="caseStyle" id="case${cell.position}"><img src="${
-      cell.image
-    }"/></div>`
+    return `
+    <div class="caseStyle" id="case${cell.position}">
+      <img src="${cell.image}"/>
+      <div>${cell.text}</div>
+    </div>`
   }
   
   const divsContainer = document.getElementById("case")
