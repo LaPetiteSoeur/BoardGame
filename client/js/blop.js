@@ -2,103 +2,74 @@ fetch(
   "https://cdn.rawgit.com/akabab/superhero-api/0.2.0/api/appearance.json"
 ).then(response => response.json())
 
-//get a reference to the stage
-var stage = document.querySelector("#stage")
-
-//the 2d array that defines the board
-var board = [0,
-1,
-2,
-3,
-4,
-5,
-6,
-7,
-8,
-9,
-27,
-28,
-29,
-30,
-31,
-32,
-33,
-34,
-35,
-10,
-26,
-46,
-47,
-48,
-49,
-50,
-51,
-52,
-36,
-11,
-25,
-45,
-58,
-57,
-56,
-55,
-54,
-53,
-37,
-12,
-24,
-44,
-43,
-42,
-41,
-40,
-39,
-38,
-38,
-13,
-23,
-22,
-21,
-20,
-19,
-18,
-17,
-16,
-15,
-14
+const board = [
+  {position:0, image:`IMG_4182.jpg`, text:``, class:``},
+  {position:1, image:``, text:``, class:``},
+  {position:2, image:``, text:``, class:``},
+  {position:3, image:``, text:``, class:``},
+  {position:4, image:``, text:``, class:``},
+  {position:5, image:``, text:``, class:``},
+  {position:6, image:``, text:``, class:``},
+  {position:7, image:``, text:``, class:``},
+  {position:8, image:``, text:``, class:``},
+  {position:9, image:``, text:``, class:``},
+  {position:27, image:``, text:``, class:``},
+  {position:28, image:``, text:``, class:``},
+  {position:29, image:``, text:``, class:``},
+  {position:30, image:``, text:``, class:``},
+  {position:31, image:``, text:``, class:``},
+  {position:32, image:``, text:``, class:``},
+  {position:33, image:``, text:``, class:``},
+  {position:34, image:``, text:``, class:``},
+  {position:35, image:``, text:``, class:``},
+  {position:10, image:``, text:``, class:``},
+  {position:26, image:``, text:``, class:``},
+  {position:46, image:``, text:``, class:``},
+  {position:47, image:``, text:``, class:``},
+  {position:48, image:``, text:``, class:``},
+  {position:49, image:``, text:``, class:``},
+  {position:50, image:``, text:``, class:``},
+  {position:51, image:``, text:``, class:``},
+  {position:52, image:``, text:``, class:``},
+  {position:36, image:``, text:``, class:``},
+  {position:11, image:``, text:``, class:``},
+  {position:25, image:``, text:``, class:``},
+  {position:45, image:``, text:``, class:``},
+  {position:58, image:``, text:``, class:``},
+  {position:57, image:``, text:``, class:``},
+  {position:56, image:``, text:``, class:``},
+  {position:55, image:``, text:``, class:``},
+  {position:54, image:``, text:``, class:``},
+  {position:53, image:``, text:``, class:``},
+  {position:37, image:``, text:``, class:``},
+  {position:12, image:``, text:``, class:``},
+  {position:24, image:``, text:``, class:``},
+  {position:44, image:``, text:``, class:``},
+  {position:43, image:``, text:``, class:``},
+  {position:42, image:``, text:``, class:``},
+  {position:41, image:``, text:``, class:``},
+  {position:40, image:``, text:``, class:``},
+  {position:39, image:``, text:``, class:``},
+  {position:38, image:``, text:``, class:``},
+  {position:38, image:``, text:``, class:``},
+  {position:13, image:``, text:``, class:``},
+  {position:23, image:``, text:``, class:``},
+  {position:22, image:``, text:``, class:``},
+  {position:21, image:``, text:``, class:``},
+  {position:20, image:``, text:``, class:``},
+  {position:19, image:``, text:``, class:``},
+  {position:18, image:``, text:``, class:``},
+  {position:17, image:``, text:``, class:``},
+  {position:16, image:``, text:``, class:``},
+  {position:15, image:``, text:``, class:``},
+  {position:14, image:``, text:``, class:``},
 ]
 
-for (const b of board) {
-  `<div>'hello'<div>`
-  if (b % 10) {
-    <br>
-  }
+const creatediv = cell => {
+return `<div class="caseStyle"><img src="${cell.image}"/></div>`
 }
 
-// //the size of each cell
-// var SIZE = 100
-//
-// //the space between each cell
-// var SPACE = 5
-//
-// //display the array
-// var ROWS = board.length
-// var COLUMNS = board[0].length
-//
-// for (var row = 0; row < ROWS; row++) {
-//   for (var column = 0; column < COLUMNS; column++) {
-//     //create a div HTML element called cell
-//     var cell = document.createElement("div")
-//
-//     //set its CSS class to cell
-//     cell.setAttribute("id", `cell${row}${column}`)
-//     cell.setAttribute("class", `cell`)
-//
-//     //add the div HTML element to the stage
-//     stage.appendChild(cell)
-//
-//     //position the cell
-//     cell.style.top = row * (SIZE + SPACE) + "px"
-//     cell.style.left = column * (SIZE + SPACE) + "px"
-//   }
-// }
+const divsContainer = document.getElementById('case')
+divsContainer.innerHTML = board
+.map(creatediv)
+.join(" ")
