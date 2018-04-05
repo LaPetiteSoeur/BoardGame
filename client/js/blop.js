@@ -1,6 +1,6 @@
-fetch(
-  "https://cdn.rawgit.com/akabab/superhero-api/0.2.0/api/appearance.json"
-).then(response => response.json())
+// fetch(
+//   "https://cdn.rawgit.com/akabab/superhero-api/0.2.0/api/appearance.json"
+// ).then(response => response.json())
 
 const board = [
   {position:0, image:`IMG_4182.jpg`, text:``, class:``},
@@ -73,3 +73,29 @@ const divsContainer = document.getElementById('case')
 divsContainer.innerHTML = board
 .map(creatediv)
 .join(" ")
+
+
+
+// DICE MODULE
+
+const getRandomInt = (min, max) => {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+const throwDices = () => {
+  const Dice1 = getRandomInt(1, 6)
+  const Dice2 = getRandomInt(1, 6)  
+  const resultTwoDices = Dice1 + Dice2
+  const diceElement = document.getElementById('resultDice')
+  diceElement.innerHTML  = `
+  <div><span class="dice">${Dice1}</span> + 
+  <span class="dice">${Dice2}</span></div>
+  <div id="move">Player 1 Moves ${resultTwoDices} steps </div>
+  `
+}
+
+console.log(throwDices())
+const throwDiceElement = document.getElementById('throwDice')
+throwDiceElement.addEventListener('click', throwDices)
