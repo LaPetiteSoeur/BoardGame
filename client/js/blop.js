@@ -3,7 +3,7 @@
 // ).then(response => response.json())
 
 const board = [
-  {position:0, image:`IMG_4182.jpg`, text:``, class:``},
+  {position:0, image:``, text:``, class:``},
   {position:1, image:``, text:``, class:``},
   {position:2, image:``, text:``, class:``},
   {position:3, image:``, text:``, class:``},
