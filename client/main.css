@@ -6,9 +6,11 @@ body {
   background-color: black;
 }
 #titre {
-  color : white;
+  color : hotpink;
   text-align: center;
-  padding-bottom: 1em;
+  margin-bottom: 0;
+  padding-top: 10px;
+  text-shadow: 3px 3px #1515ea;
 }
 #throwDice img {
   width: 100px;
@@ -16,8 +18,9 @@ body {
   border-radius: 100%;
 }
 
-audio {
+#blopblop {
   color: red;
+  margin-left: 75px;
 }
 
 #throwDice img:hover {
@@ -85,6 +88,11 @@ span {
   color: hotpink;
 }
 
+#gif {
+  height: 40px;
+  width: 236px;
+}
+
 #number {
   display: flex;
   justify-content: center;
@@ -104,7 +112,7 @@ span {
 }
 .container {
   display: flex;
-  margin-bottom: 50px;
+  margin-bottom: 20px;
 }
 #resultDice {
   text-align: center;
