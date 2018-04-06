@@ -31,7 +31,7 @@ const updateHealth = cell => {
 
 const setPlayer = position => {
   const elem = document.getElementById(`case${position}`)
-  elem.style.border = "4px solid yellow"
+  elem.style.border = "4px solid red"
 }
 
 const unsetPlayer = position => {
