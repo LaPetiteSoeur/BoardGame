@@ -2,6 +2,8 @@ import { createBoard } from './board.js'
 
 const baseUrl = 'https://cdn.rawgit.com/akabab/superhero-api/0.2.0/api'
 
+let position = 0
+
 const getHeroes = () => fetch(`${baseUrl}/all.json`)
   .then(response => response.json())
 
@@ -11,11 +13,43 @@ const getRandomInt = (min, max) => {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-const throwDices = () => {
+const setPlayer = position => {
+  const elem = document.getElementById(`case${position}`)
+  elem.style.border = "4px solid blue"
+  // elem.style.boxShadow = "inset 0 0 10px blue"
+}
+
+const unsetPlayer = position => {
+  const elem = document.getElementById(`case${position}`)
+  elem.style.border = "4px solid black"
+  // elem.style.boxShadow = "inset 0 0 10px black"
+}
+
+const movePlayer = (board, dice) => {
+  const newPosition = position + dice
+  const newCell = board.find(cell => cell.position === newPosition)
+
+  console.log('newPosition:', newPosition)
+
+  unsetPlayer(position)
+
+  position = newPosition
+
+  if (newPosition > board.length) {
+    console.log('GG')
+    return
+  }
+
+  setPlayer(newPosition)
+}
+
+const throwDices = board => {
   const Dice1 = getRandomInt(1, 6)
   const Dice2 = getRandomInt(1, 6)
   const resultTwoDices = Dice1 + Dice2
   const diceElement = document.getElementById('resultDice')
+
+  movePlayer(board, resultTwoDices)
 
   diceElement.innerHTML = `
     <div>
@@ -38,11 +72,11 @@ const setup = board => {
 
   // add event on dice click
   const diceElement = document.getElementById('throwDice')
-  diceElement.addEventListener('click', throwDices)
+  diceElement.addEventListener('click', () => throwDices(board))
 }
 
 const init = () => {
-  document.getElementById('case0').style.border = "2px solid blue"
+  setPlayer(0)
 }
 
 const start = async () => {
