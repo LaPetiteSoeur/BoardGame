@@ -10,7 +10,7 @@
   /* When the animation is finished, start again */
   animation-iteration-count: infinite;
   }
-  
+
   @keyframes shake {
   0% { transform: translate(1px, 1px) rotate(0deg); }
   10% { transform: translate(-1px, -2px) rotate(-1deg); }
@@ -23,11 +23,15 @@
   80% { transform: translate(-1px, -1px) rotate(1deg); }
   90% { transform: translate(1px, 2px) rotate(0deg); }
   100% { transform: translate(1px, -2px) rotate(-1deg); }
-  } 
+  }
 #case {
   min-width: 1100px;
   max-width: 1100px;
+
 }
+/* #case0{
+
+} */
 .caseStyle {
   width:90px;
   height:90px;
@@ -41,4 +45,3 @@ img {
   width:100%;
   height:100%;
 }
-
