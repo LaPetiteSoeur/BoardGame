@@ -16,13 +16,13 @@ console.log(heroes[0].images.lg);
 // 3- shi-fu-mi
 // 4- Shots
 // 5- abdou (+20)
-// 6- yo (-50)
+// 6- yoan (-50)
 // 7- clément (-25)
 // 8- fin
 // 9- insulte (-20)
 
   const board = [
-    {position:0, image:``, text:`DEPART`, class:`0`},
+    {position:0, image:`../assets/depart.jpg`, text:`DEPART`, class:`0`},
     {position:1, image: heroes[49].images.lg, text:`Tous les allemands ne sont pas nazis!`, class:`2`},
     {position:2, image:``, text:`Tu perds 15 points et tu bois 2 gorgées.`, class:`1`},
     {position:3, image:``, text:`Défonce ton voisin de gauche au SHI-FU-MI! Si tu perds, bois 1 gorgée`, class:`3`},
@@ -45,7 +45,7 @@ console.log(heroes[0].images.lg);
     {position:26, image:``, text:`Tu bois ! 1 shot !`, class:`4`},
     {position:46, image: heroes[265].images.lg, text:`Tu perds 15 points et tu bois 2 gorgées.`, class:`1`},
     {position:47, image:``, text:`Legolas est une femme`, class:`2`},
-    {position:48, image:``, text:`Tu perds 15 pts de respouet (^^respet), c kado c magiques`, class:`7`},
+    {position:48, image:`../assets/clement.jpg`, text:`Tu perds 15 pts de respouet (^^respet), c kado c magiques`, class:`7`},
     {position:49, image:``, text:`Défonce ton voisin de gauche au SHI-FU-MI! Si tu perds, bois 1 gorgée`, class:`3`},
     {position:50, image: heroes[307].images.lg, text:`Tu perds 15 points et tu bois 2 gorgées.`, class:`1`},
     {position:51, image:``, text:`Tu bois ! 1 shot !`, class:`4`},
@@ -53,10 +53,10 @@ console.log(heroes[0].images.lg);
     {position:36, image:``, text:`Tu bois ! 2 shots !`, class:`4`},
     {position:11, image: heroes[332].images.lg, text:`Tu perds X points et tu bois 2 gorgées.`, class:`1`},
     {position:25, image:``, text:`Tu bois ! 1 shot !`, class:`4`},
-    {position:45, image:``, text:`C'est normal si vous comprenez pas !! Gagne 20 points de respect !`, class:`5`},
-    {position:58, image:``, text:`l'alcool est dangereux pour la santé ! Buvez avec modération!`, class:`8`},
+    {position:45, image:`../assets/abdou.jpg`, text:`C'est normal si vous comprenez pas !! Gagne 20 points de respect !`, class:`5`},
+    {position:58, image:`../assets/fin.jpg`, text:`l'alcool est dangereux pour la santé ! Buvez avec modération!`, class:`8`},
     {position:57, image: heroes[346].images.lg, text:``, class:`1`},
-    {position:56, image:``, text:`TAIS-TOI ! et retourne à la case départ.`, class:`6`},
+    {position:56, image:`../assets/yoann.jpg`, text:`TAIS-TOI ! et retourne à la case départ.`, class:`6`},
     {position:55, image:``, text:`Ton père c'est un marketeux et tu bois 1 shot`, class:`9`},
     {position:54, image: heroes[370].images.lg, text:``, class:`1`},
     {position:53, image:``, text:`Tu bois ! 1 shot !`, class:`4`},
