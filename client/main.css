@@ -143,3 +143,10 @@ font-size: 1.3em;
 #case {
   border: solid lime 4px;
 }
+
+#gameover {
+  margin: auto;
+  color: white;
+  font-size: 4rem;
+}
+
