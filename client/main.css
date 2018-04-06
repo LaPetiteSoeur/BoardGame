@@ -4,6 +4,12 @@ body {
   margin: 0;
   margin-top: 2em;
   background-color: black;
+
+}
+
+#center {
+  display: flex;
+  justify-content: center;
 }
 #titre {
   color : hotpink;
@@ -130,6 +136,8 @@ span {
 
 #message {
 width: 100%;
+color: yellow;
+font-size: 1.3em;
 }
 
 #case {
