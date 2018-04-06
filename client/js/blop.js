@@ -23,7 +23,7 @@ console.log(heroes[0].images.lg);
 
   const board = [
     {position:0, image:``, text:`DEPART`, class:`0`},
-    {position:1, image: heroes[49].images.lg, text:`Tous les allemands ne sont pas nazis!`, class:`2`},
+    {position:1, image: heroes[49].images.lg, text:`Vrai ou faux ? "Tous les allemands ne sont pas nazis!"`, class:`2`},
     {position:2, image:``, text:`Tu perds 15 points et tu bois 2 gorgées.`, class:`1`},
     {position:3, image:``, text:`Défonce ton voisin de gauche au SHI-FU-MI! Si tu perds, bois 1 gorgée`, class:`3`},
     {position:4, image:``, text:`Les dauphins sont des violeurs`, class:`2`},
@@ -86,18 +86,28 @@ console.log(heroes[0].images.lg);
   
   // console.log(board)
   
-  const creatediv = cell => {
+const creatediv = cell => {
     return `
     <div class="caseStyle" id="case${cell.position}">
       <img src="${cell.image}"/>
-      <div>${cell.text}</div>
     </div>`
   }
   
   const divsContainer = document.getElementById("case")
   divsContainer.innerHTML = board.map(creatediv).join(" ")
-  
+
+
+  document.getElementById(`case${cell.position}`).addEventListener('click', () => {
+
+    const divText = document.getElementById("textDisplay")
+    divText.innerHTML = board[0].text 
+
+})
+
+   
 }
+
+
 
 // DICE MODULE
 
