@@ -3,6 +3,7 @@ body {
   font-size: 0.67em;
   margin: 0;
   margin-top: 9em;
+  background-color: black;
 }
 
 #throwDice img {
@@ -59,11 +60,16 @@ img {
 }
 
 .HUD {
-  border: 8px solid rgba(0, 0, 0, 0.5);
+  border-bottom: 5px solid cyan;
+  border-left: 5px solid hotpink;
+  border-top: 5px solid hotpink;
+  border-right: 5px solid cyan;
   padding: 0 5px;
   text-align: center;
   margin-right: 5px;
+  color: white;
 }
+
 span {
   color: red;
 }
@@ -92,3 +98,17 @@ span {
   height: 100px;
   margin: 2px 0;
 }
+
+#case {
+  border: solid lime 4px;
+}
+
+/*#case1, #case2, #case3, #case4, #case5, #case6, #case7, #case8 {
+  border-top: solid red 10px;
+}
+
+#case9, #case, #case, #case, #case, #case, #case, #case13, #case, #case {
+  border-left: solid red 10px;*/
+}
+
+#case9, #case, #case, #case, #case, #case, #case, #case, #case, #case
