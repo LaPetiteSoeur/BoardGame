@@ -31,6 +31,22 @@ const createCell = cell => `
   </div>
 `
 
+const healthElement = document.getElementById("health")
+
+const updateHealth = cell => {
+  if (cell.class === '1') {
+    healthElement.value -= 15
+  } else if (cell.class === '5') {
+    healthElement.value += 20
+  } else if (cell.class === '6') {
+    healthElement.value -= 50
+  } else if (cell.class === '7') {
+    healthElement.value -= 25
+  } else if (cell.class === '9') {
+    healthElement.value -= 20
+  }
+}
+
 const setup = board => {
   // generate cells
   const cellsContainer = document.getElementById("case")
@@ -39,6 +55,13 @@ const setup = board => {
   // add event on dice click
   const diceElement = document.getElementById('throwDice')
   diceElement.addEventListener('click', throwDices)
+
+  // health handler
+  const pos = 2
+  const cell = board[pos]
+  updateHealth(cell)
+
+  healthElement.addEventListener('click', () => updateHealth(cell))
 }
 
 const init = () => {
@@ -54,43 +77,4 @@ const start = async () => {
   init()
 }
 
-// const movePlayer = () => {
-//   newPosition = arr.find(s => s.position === (precPosition + resultTwoDices)
-// }
-
 start()
-
-// Barre de respect
-
-// 0- départ
-// 1- héros (-15)
-// 2- vrai ou faux (Si faux, tu bois!)
-// 3- shi-fu-mi
-// 4- Shots
-// 5- abdou (+20)
-// 6- yo (-50)
-// 7- clément (-25)
-// 8- fin
-// 9- insulte (-20)
-
-let health = document.getElementById("health")
-
-
-const addLessHealth = () => {
-  if (board.class === 1) {
-    health.value -= 15
-  } else if (board.class === 5) {
-    health.value += 20
-  } else if (board.class === 6) {
-    health.value -= 50
-  } else if (board.class === 7) {
-    health.value -= 25
-  } else if (board.class === 9) {
-    health.value -= 20
-  }
-}
-
-
-addLessHealth()
-
-health.addEventListener('click', addLessHealth)
