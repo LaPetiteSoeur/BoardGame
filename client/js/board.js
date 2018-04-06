@@ -13,7 +13,7 @@
 export const createBoard = heroes => [
   {position: 0, image:`../assets/depart.jpg`, text:`DEPART`, class:`0`},
   {position: 1, image: `../assets/TF.png`, text:`Tous les allemands ne sont pas nazis!`, class:`2`},
-  {position: 2, image:heroes[49].images.lg, text:`Tu perds 15 points et tu bois 2 gorgées.`, class:`1`},
+  {position: 2, image:heroes[55].images.lg, text:`Tu perds 15 points et tu bois 2 gorgées.`, class:`1`},
   {position: 3, image:`../assets/PFC.jpg`, text:`Défonce ton voisin de gauche au SHI-FU-MI! Si tu perds, bois 1 gorgée`, class:`3`},
   {position: 4, image:`../assets/TF2.jpg`, text:`Les dauphins sont des violeurs`, class:`2`},
   {position: 5, image:`../assets/INSULTE.jpg`, text:`Quand j'te vois j'me dis que tes parents on oublié le <head>!`, class:`9`},
