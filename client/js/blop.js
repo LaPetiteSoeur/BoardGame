@@ -13,6 +13,22 @@ const getRandomInt = (min, max) => {
   return Math.floor(Math.random() * (max - min + 1)) + min
 }
 
+const healthElement = document.getElementById("health")
+
+const updateHealth = cell => {
+  if (cell.class === '1') {
+    healthElement.value -= 15
+  } else if (cell.class === '5') {
+    healthElement.value += 20
+  } else if (cell.class === '6') {
+    healthElement.value -= 50
+  } else if (cell.class === '7') {
+    healthElement.value -= 25
+  } else if (cell.class === '9') {
+    healthElement.value -= 20
+  }
+}
+
 const setPlayer = position => {
   const elem = document.getElementById(`case${position}`)
   elem.style.border = "4px solid blue"
@@ -20,25 +36,27 @@ const setPlayer = position => {
 
 const unsetPlayer = position => {
   const elem = document.getElementById(`case${position}`)
-  elem.style.border = "4px solid black"
+  elem.style.border = "4px solid transparent"
 }
 
 const movePlayer = (board, dice) => {
   const newPosition = position + dice
-  const newCell = board.find(cell => cell.position === newPosition)
 
-  console.log('newPosition:', newPosition)
-
-  unsetPlayer(position)
-
-  position = newPosition
-
-  if (newPosition > board.length) {
+  if (newPosition >= board.length) {
+    unsetPlayer(position)
+    setPlayer(59)
     console.log('GG')
     return
   }
 
+  const newCell = board.find(cell => cell.position === newPosition)
+
+  updateHealth(newCell)
+
+  unsetPlayer(position)
   setPlayer(newPosition)
+
+  position = newPosition
 }
 
 const throwDices = board => {
@@ -63,22 +81,6 @@ const createCell = cell => `
   </div>
 `
 
-const healthElement = document.getElementById("health")
-
-const updateHealth = cell => {
-  if (cell.class === '1') {
-    healthElement.value -= 15
-  } else if (cell.class === '5') {
-    healthElement.value += 20
-  } else if (cell.class === '6') {
-    healthElement.value -= 50
-  } else if (cell.class === '7') {
-    healthElement.value -= 25
-  } else if (cell.class === '9') {
-    healthElement.value -= 20
-  }
-}
-
 const setup = board => {
   // generate cells
   const cellsContainer = document.getElementById("case")
@@ -88,11 +90,7 @@ const setup = board => {
   const diceElement = document.getElementById('throwDice')
   diceElement.addEventListener('click', () => throwDices(board))
 
-  // health handler
-  const pos = 2
-  const cell = board[pos]
-  updateHealth(cell)
-
+  // add event for health
   healthElement.addEventListener('click', () => updateHealth(cell))
 }
 
