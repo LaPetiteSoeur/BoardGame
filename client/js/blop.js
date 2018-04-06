@@ -50,6 +50,11 @@ const movePlayer = (board, dice) => {
   }
 
   const newCell = board.find(cell => cell.position === newPosition)
+  const messageElement = document.getElementById('message')
+  messageElement.innerHTML = `
+    <p>${newCell.text}</p>
+    <img src="${newCell.image}">
+  `
 
   updateHealth(newCell)
 
