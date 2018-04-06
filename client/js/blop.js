@@ -26,6 +26,8 @@ const updateHealth = cell => {
     healthElement.value -= 25
   } else if (cell.class === "9") {
     healthElement.value -= 20
+  } else if (healthElement.value === 0) {
+    alert(`GAME OVER..BI*CH !!`)
   }
 }
 
@@ -119,3 +121,5 @@ const start = async () => {
 }
 
 start()
+
+
