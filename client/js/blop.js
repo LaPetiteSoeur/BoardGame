@@ -31,6 +31,22 @@ const createCell = cell => `
   </div>
 `
 
+const healthElement = document.getElementById("health")
+
+const updateHealth = cell => {
+  if (cell.class === '1') {
+    healthElement.value -= 15
+  } else if (cell.class === '5') {
+    healthElement.value += 20
+  } else if (cell.class === '6') {
+    healthElement.value -= 50
+  } else if (cell.class === '7') {
+    healthElement.value -= 25
+  } else if (cell.class === '9') {
+    healthElement.value -= 20
+  }
+}
+
 const setup = board => {
   // generate cells
   const cellsContainer = document.getElementById("case")
@@ -46,8 +62,17 @@ const setup = board => {
 //   //   }
 
   // add event on dice click
-  const diceElement = document.getElementById("throwDice")
-  diceElement.addEventListener("click", throwDices)
+
+  const diceElement = document.getElementById('throwDice')
+  diceElement.addEventListener('click', throwDices)
+
+  // health handler
+  const pos = 2
+  const cell = board[pos]
+  updateHealth(cell)
+
+  healthElement.addEventListener('click', () => updateHealth(cell))
+
 }
 
 const init = () => {
@@ -63,8 +88,5 @@ const start = async () => {
   init()
 }
 
-// const movePlayer = () => {
-//   newPosition = arr.find(s => s.position === (precPosition + resultTwoDices)
-// }
 
 start()
