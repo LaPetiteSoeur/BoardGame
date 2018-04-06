@@ -49,7 +49,7 @@ const movePlayer = (board, dice) => {
     const messageElement = document.getElementById("message")
     messageElement.innerHTML = `
     <p>BRAVO</p>
-    <img src="../assets/fin.jpg"/>
+    <img src="/assets/fin.jpg"/>
   `
     return
   }
@@ -106,7 +106,7 @@ const init = () => {
   const messageElement = document.getElementById("message")
   messageElement.innerHTML = `
     <p>Welcome</p>
-    <img src="../assets/depart.jpg">`
+    <img src="/assets/depart.jpg">`
 }
 
 const start = async () => {
