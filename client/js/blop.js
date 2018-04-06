@@ -59,3 +59,38 @@ const start = async () => {
 // }
 
 start()
+
+// Barre de respect
+
+// 0- départ
+// 1- héros (-15)
+// 2- vrai ou faux (Si faux, tu bois!)
+// 3- shi-fu-mi
+// 4- Shots
+// 5- abdou (+20)
+// 6- yo (-50)
+// 7- clément (-25)
+// 8- fin
+// 9- insulte (-20)
+
+let health = document.getElementById("health")
+
+
+const addLessHealth = () => {
+  if (board.class === 1) {
+    health.value -= 15
+  } else if (board.class === 5) {
+    health.value += 20
+  } else if (board.class === 6) {
+    health.value -= 50
+  } else if (board.class === 7) {
+    health.value -= 25
+  } else if (board.class === 9) {
+    health.value -= 20
+  }
+}
+
+
+addLessHealth()
+
+health.addEventListener('click', addLessHealth)
