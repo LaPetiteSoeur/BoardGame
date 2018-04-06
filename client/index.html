@@ -14,24 +14,40 @@
 </head>
 
 <body>
-  <div class="container">
-    <div class="HUD">
-      <h2>ROLL THE DICE</h2>
-      <div id="throwDice">
-        <img src="https://lh3.ggpht.com/A7X8JLJb4q3KwZJ_6cD7Rs8si8k5_l6Ud605JHT6Q2JtgI5sYobZfLVSqc1TY_Klgl0=w300">
-      </div>
-      <div id="resultDice">Result</div>
-      <h2 class="player1"> Player 1</h2>
-      <p>Barre de respect</p>
-      <h2 class="player2">Player 2</h2>
-      <p>Barre de respect</p>
+  <h2 id="titre"> laPetiteSoeur.exe</h2>
+  <img id="gif" src="https://medias.francoischarron.com/thumbnail/medias.francoischarron.com/gifs/original/gifs-chats-chiens-J34VRZwAxo.gif">
+    <div class="container">
+  <div class="HUD">
+    <h2>ROLL THE DICE</h2>
+    <div id="throwDice">
+      <img src="https://lh3.ggpht.com/A7X8JLJb4q3KwZJ_6cD7Rs8si8k5_l6Ud605JHT6Q2JtgI5sYobZfLVSqc1TY_Klgl0=w300">
     </div>
-    <div id="case"></div>
+    <div id="resultDice">Result</div>
+    <h2 class="player1"> Player 1</h2>
+    <p>Barre de respect</p>
+    <progress id="health" value="100" max="100"></progress>
+    <h2 class="player2">Player 2</h2>
+    <p>Barre de respect</p>
+    <progress id="health" value="100" max="100"></progress>
+    <div id="message"></div>
+  </div>
+  <p id="history"></p>
+  <div id="case"></div>
   </div>
   <!-- <script scr="dice/dice.js"></script> -->
   <script type="module" src="js/blop.js"></script>
 
   <!-- <script src="https://cdn.rawgit.com/akabab/superhero-api/0.2.0/api"></script> -->
 </body>
+<footer>
+    <audio autoplay id="player" src="/assets/blop.mp3"></audio>
+    <div id="blopblop"> 
+      <button onclick="document.getElementById('player').play()">Play</button> 
+      <button onclick="document.getElementById('player').pause()">Pause</button> 
+    </div>
+  <!-- <audio controls autoplay loop>
+    <source src="/assets/blop.mp3" type="audio/mpeg"> Your browser does not support the audio element.
+  </audio> -->
+</footer>
 
 </html>

@@ -2,13 +2,25 @@ body {
   font-family: "Press Start 2P", cursive;
   font-size: 0.67em;
   margin: 0;
-  margin-top: 9em;
+  margin-top: 2em;
+  background-color: black;
 }
-
+#titre {
+  color : hotpink;
+  text-align: center;
+  margin-bottom: 0;
+  padding-top: 10px;
+  text-shadow: 3px 3px #1515ea;
+}
 #throwDice img {
   width: 100px;
   height: 100px;
   border-radius: 100%;
+}
+
+#blopblop {
+  color: red;
+  margin-left: 75px;
 }
 
 #throwDice img:hover {
@@ -18,42 +30,21 @@ body {
   animation-iteration-count: infinite;
 }
 
-@keyframes shake {
-  0% {
-    transform: translate(1px, 1px) rotate(0deg);
-  }
-  10% {
-    transform: translate(-1px, -2px) rotate(-1deg);
-  }
-  20% {
-    transform: translate(-3px, 0px) rotate(1deg);
-  }
-  30% {
-    transform: translate(3px, 2px) rotate(0deg);
-  }
-  40% {
-    transform: translate(1px, -1px) rotate(1deg);
-  }
-  50% {
-    transform: translate(-1px, 2px) rotate(-1deg);
-  }
-  60% {
-    transform: translate(-3px, 1px) rotate(0deg);
-  }
-  70% {
-    transform: translate(3px, 1px) rotate(-1deg);
-  }
-  80% {
-    transform: translate(-1px, -1px) rotate(1deg);
-  }
-  90% {
-    transform: translate(1px, 2px) rotate(0deg);
-  }
-  100% {
-    transform: translate(1px, -2px) rotate(-1deg);
-  }
-}
 
+
+  @keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+  }
 #case {
   min-width: 1150px;
   max-width: 1200px;
@@ -63,7 +54,7 @@ body {
   border: 4px solid hotpink;
 }
 
-#case58 {
+#case59 {
   border: 4px solid cyan;
 }
 
@@ -80,14 +71,36 @@ img {
 }
 
 .HUD {
-  border: 8px solid rgba(0, 0, 0, 0.5);
+  border-bottom: 5px solid cyan;
+  border-left: 5px solid hotpink;
+  border-top: 5px solid hotpink;
+  border-right: 5px solid cyan;
   padding: 0 5px;
   text-align: center;
   margin-right: 5px;
+  color: white;
+  width: 220px;
+  height: 656px;
+  overflow: hidden;
 }
+
 span {
-  color: red;
+  color: hotpink;
 }
+
+#gif {
+  height: 40px;
+  width: 236px;
+}
+
+#number {
+  display: flex;
+  justify-content: center;
+  margin-top: -20px;
+  font-size: 18px;
+  text-shadow: 3px 3px #1515ea;
+}
+
 #resultDice {
   padding: 10px 0;
 }
@@ -99,6 +112,7 @@ span {
 }
 .container {
   display: flex;
+  margin-bottom: 20px;
 }
 #resultDice {
   text-align: center;
@@ -112,4 +126,12 @@ span {
   width: 100px;
   height: 100px;
   margin: 2px 0;
+}
+
+#message {
+width: 100%;
+}
+
+#case {
+  border: solid lime 4px;
 }
