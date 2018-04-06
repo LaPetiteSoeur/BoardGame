@@ -15,10 +15,11 @@ const getRandomInt = (min, max) => {
 
 
 const healthElement = document.getElementById("health")
-
+const messageElement = document.getElementById("message")
+    
 const updateHealth = cell => {
   if (cell.class === "1") {
-    healthElement.value -= 70
+    healthElement.value -= 15
   } else if (cell.class === "5") {
     healthElement.value += 25
   } else if (cell.class === "6") {
@@ -41,14 +42,13 @@ const unsetPlayer = position => {
 }
 
 const movePlayer = (board, dice) => {
-  const newPosition = position + dice
+  let newPosition = position + dice
 
-  // WIN
+    // WIN
   if (newPosition >= board.length) {
     unsetPlayer(position)
     setPlayer(59)
     console.log("GG")
-    const messageElement = document.getElementById("message")
     messageElement.innerHTML = `
     <p>BRAVO</p>
     <img src="./assets/fin.jpg"/>
@@ -62,6 +62,15 @@ const movePlayer = (board, dice) => {
     <p>${newCell.text}</p>
     <img src="${newCell.image}">
   `
+
+  if (newPosition === 57) {
+    messageElement.innerHTML = `
+      <p>${newCell.text}</p>
+      <img src="${newCell.image}">
+    `
+    healthElement.value = 100
+    newPosition = 0
+  }
 
   updateHealth(newCell)
 
