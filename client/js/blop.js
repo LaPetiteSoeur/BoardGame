@@ -13,21 +13,20 @@ const getRandomInt = (min, max) => {
   return Math.floor(Math.random() * (max - min + 1)) + min
 }
 
+
 const healthElement = document.getElementById("health")
 
 const updateHealth = cell => {
   if (cell.class === "1") {
-    healthElement.value -= 15
+    healthElement.value -= 70
   } else if (cell.class === "5") {
-    healthElement.value += 20
+    healthElement.value += 25
   } else if (cell.class === "6") {
     healthElement.value -= 50
   } else if (cell.class === "7") {
-    healthElement.value -= 25
+    healthElement.value -= 15
   } else if (cell.class === "9") {
     healthElement.value -= 20
-  } else if (healthElement.value === 0) {
-    alert(`GAME OVER..BI*CH !!`)
   }
 }
 
@@ -44,6 +43,7 @@ const unsetPlayer = position => {
 const movePlayer = (board, dice) => {
   const newPosition = position + dice
 
+  // WIN
   if (newPosition >= board.length) {
     unsetPlayer(position)
     setPlayer(59)
@@ -64,6 +64,15 @@ const movePlayer = (board, dice) => {
   `
 
   updateHealth(newCell)
+
+  // GAME OVER
+
+  if (healthElement.value <= 0) {
+    const container = document.getElementsByClassName("container")[0]
+    container.innerHTML = `<div id='gameover'><h1>GAME OVER</h1></div>`
+    console.log('game over')
+    return
+  }
 
   unsetPlayer(position)
   setPlayer(newPosition)

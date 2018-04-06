@@ -67,8 +67,8 @@ export const createBoard = heroes => [
   {position: 20, image:`./assets/INSULTE5.jpg`, text:`C'est la piquette jack! Tu bois (de la piquette)!`, class:`9`},
   {position: 19, image:`./assets/alcool16.jpg`, text:`Tu bois ! 2 shots !`, class:`4`},
   {position: 18, image:`./assets/INSULTE6.jpg`, text:`Ta soeur c'est comme Wow: toute la Chine paye pour aller dessus et tu bois 1 gorgée.`, class:`9`},
-  {position: 17, image:`./assets/clement2.jpg`, text:`Tu perds 15 pts de respouet (^^respet), c kado c magiques`, class:`7`},,
+  {position: 17, image:`./assets/clement2.jpg`, text:`Tu perds 15 pts de respouet (^^respet), c kado c magiques`, class:`7`},
   {position: 16, image: heroes[307].images.lg, text:`Tu perds 15 points et tu bois 2 gorgées.`, class:`1`},
   {position: 15, image:heroes[42].images.lg, text:`Tu perds 15 points et tu bois 2 gorgées.`, class:`1`},
-  {position: 14, image:`./assets/alcool16.jpg`, text:`Tu bois ! 1 shot !`, class:`4`},
+  {position: 14, image:`./assets/alcool16.jpg`, text:`Tu bois ! 1 shot !`, class:`4`}
 ]
