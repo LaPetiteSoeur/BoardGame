@@ -1,21 +1,21 @@
-import { createBoard } from './board.js'
+import { createBoard } from "./board.js"
 
-const baseUrl = 'https://cdn.rawgit.com/akabab/superhero-api/0.2.0/api'
+const baseUrl = "https://cdn.rawgit.com/akabab/superhero-api/0.2.0/api"
 
-const getHeroes = () => fetch(`${baseUrl}/all.json`)
-  .then(response => response.json())
+const getHeroes = () =>
+  fetch(`${baseUrl}/all.json`).then(response => response.json())
 
 const getRandomInt = (min, max) => {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min + 1)) + min;
+  min = Math.ceil(min)
+  max = Math.floor(max)
+  return Math.floor(Math.random() * (max - min + 1)) + min
 }
 
 const throwDices = () => {
   const Dice1 = getRandomInt(1, 6)
   const Dice2 = getRandomInt(1, 6)
   const resultTwoDices = Dice1 + Dice2
-  const diceElement = document.getElementById('resultDice')
+  const diceElement = document.getElementById("resultDice")
 
   diceElement.innerHTML = `
     <div>
@@ -36,13 +36,22 @@ const setup = board => {
   const cellsContainer = document.getElementById("case")
   cellsContainer.innerHTML = board.map(createCell).join("")
 
+//   document
+//     .getElementById(`case`)
+//     .addEventListener("click", () => {
+//       const divText = document.getElementById("history")
+//       divText.innerHTML = board[].text
+//     })
+
+//   //   }
+
   // add event on dice click
-  const diceElement = document.getElementById('throwDice')
-  diceElement.addEventListener('click', throwDices)
+  const diceElement = document.getElementById("throwDice")
+  diceElement.addEventListener("click", throwDices)
 }
 
 const init = () => {
-  document.getElementById('case0').style.border = "4px solid blue"
+  document.getElementById("case0").style.border = "4px solid blue"
 }
 
 const start = async () => {
