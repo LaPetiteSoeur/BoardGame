@@ -88,4 +88,8 @@ const start = async () => {
   init()
 }
 
+console.log(throwDices())
+const throwDiceElement = document.getElementById('throwDice')
+throwDiceElement.addEventListener('click', throwDices)
+
 start()
