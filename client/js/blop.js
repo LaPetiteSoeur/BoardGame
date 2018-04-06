@@ -8,21 +8,19 @@ const getHeroes = () => fetch(`${baseUrl}/all.json`)
   .then(response => response.json())
 
 const getRandomInt = (min, max) => {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min + 1)) + min;
+  min = Math.ceil(min)
+  max = Math.floor(max)
+  return Math.floor(Math.random() * (max - min + 1)) + min
 }
 
 const setPlayer = position => {
   const elem = document.getElementById(`case${position}`)
   elem.style.border = "4px solid blue"
-  // elem.style.boxShadow = "inset 0 0 10px blue"
 }
 
 const unsetPlayer = position => {
   const elem = document.getElementById(`case${position}`)
   elem.style.border = "4px solid black"
-  // elem.style.boxShadow = "inset 0 0 10px black"
 }
 
 const movePlayer = (board, dice) => {
@@ -65,6 +63,22 @@ const createCell = cell => `
   </div>
 `
 
+const healthElement = document.getElementById("health")
+
+const updateHealth = cell => {
+  if (cell.class === '1') {
+    healthElement.value -= 15
+  } else if (cell.class === '5') {
+    healthElement.value += 20
+  } else if (cell.class === '6') {
+    healthElement.value -= 50
+  } else if (cell.class === '7') {
+    healthElement.value -= 25
+  } else if (cell.class === '9') {
+    healthElement.value -= 20
+  }
+}
+
 const setup = board => {
   // generate cells
   const cellsContainer = document.getElementById("case")
@@ -73,6 +87,13 @@ const setup = board => {
   // add event on dice click
   const diceElement = document.getElementById('throwDice')
   diceElement.addEventListener('click', () => throwDices(board))
+
+  // health handler
+  const pos = 2
+  const cell = board[pos]
+  updateHealth(cell)
+
+  healthElement.addEventListener('click', () => updateHealth(cell))
 }
 
 const init = () => {
@@ -87,9 +108,5 @@ const start = async () => {
 
   init()
 }
-
-console.log(throwDices())
-const throwDiceElement = document.getElementById('throwDice')
-throwDiceElement.addEventListener('click', throwDices)
 
 start()
